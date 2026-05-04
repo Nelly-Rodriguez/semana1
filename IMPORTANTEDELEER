@@ -1,0 +1,12 @@
+Para estos ejercicios busque la clase scanner
+ por que se me estaba complicando un poco hacer
+  los ejercicios y busque en google y me parecio
+   bueno probar con esta clase. Asi que en lugar de usar 
+   String use: scanner 
+   auto completacion que me proporciona java para describir la clase Sacnner :
+
+   1.scanner es una clase que se utiliza para leer la entrada del usuario desde la consola. 
+    En el código que proporcionaste, se utiliza la clase Scanner para solicitar al usuario 
+    que ingrese datos, como números enteros. Luego, esos datos se procesan utilizando
+     las clases Ejercicio2, Ejercicio3, Ejercicio4 y Ejercicio5 para realizar diferentes 
+     operaciones y mostrar los resultados.
