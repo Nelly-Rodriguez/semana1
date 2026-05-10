@@ -1,0 +1,63 @@
+public class Quiz1 {
+    // 2.1 Atributos privados
+    private String nombre;
+    private double not1;
+    private double not2;
+    private double not3;
+    private double notaProyecto;
+
+    
+    public Quiz1(String nombre, double not1, double not2, double not3, double notaProyecto) {
+        this.nombre = nombre;
+        this.not1 = (not1 < 0 || not1 > 100) ? 0 : not1;
+        this.not2 = (not2 < 0 || not2 > 100) ? 0 : not2;
+        this.not3 = (not3 < 0 || not3 > 100) ? 0 : not3;
+        this.notaProyecto = (notaProyecto < 0 || notaProyecto > 100) ? 0 : notaProyecto;
+    }
+
+   
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombrestudiante) { this.nombre = nombrestudiante; }
+
+    public double getNota1() { return not1; }
+    public void setNota1(double not1) { 
+        this.not1 = (not1 >= 0 && not1 <= 100) ? not1 : 0; 
+    }
+
+    public double getNota2() { return not2; }
+    public void setNota2(double not2) { 
+        this.not2 = (not2 >= 0 && not2 <= 100) ? not2 : 0; 
+    }
+
+    public double getNota3() { return not3; }
+    public void setNota3(double not3) { 
+        this.not3 = (not3 >= 0 && not3 <= 100) ? not3 : 0; 
+    }
+
+    public double getNotaProyecto() { return notaProyecto; }
+    public void setNotaProyecto(double notaProyecto) { 
+        this.notaProyecto = (notaProyecto >= 0 && notaProyecto <= 100) ? notaProyecto : 0; 
+    }
+
+    
+    public double calcularNotaFinal() {
+        double promedioParciales = (not1 + not2 + not3) / 3.0;
+        return (promedioParciales * 0.70) + (notaProyecto * 0.30);
+    }
+
+   
+    public String obtenerEstado() {
+        double nf = calcularNotaFinal();
+        if (nf >= 90) return "Excelente";
+        if (nf >= 70) return "Aprobo";
+        if (nf >= 60) return "Recuperacion";
+        return "Reprobado";
+    }
+
+    
+   
+    public String toString() {
+        return String.format("%-15s  Nota final de Estudiante: %6  %s", 
+                nombre, calcularNotaFinal(), obtenerEstado());
+    }
+}
